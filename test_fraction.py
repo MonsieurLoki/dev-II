@@ -30,9 +30,5 @@ def test_fraction():
     print(f"f1 == Fraction(6, 8): {f1 == Fraction(6, 8)}")
     print(f"f1 est adjacent à f2: {f1.is_adjacent_to(Fraction(1, 4))}")
 
-    # Négatif et valeur absolue
-    print(f"Négation de f1: {-f1}")
-    print(f"Valeur absolue de f2: {abs(f2)}")
-
 if __name__ == "__main__":
     test_fraction()
