@@ -4,7 +4,9 @@ from math import gcd
 class Fraction:
     """Classe représentant une fraction et les opérations associées.
 
-    Cette classe permet de manipuler des fractions et de réaliser diverses opérations mathématiques.
+    Auteur : Gaspard Derruine
+    Date : Novembre 2024
+    Cette classe permet des manipulations et opérations sur les fractions
     """
 
     def __init__(self, num: int = 0, den: int = 1):
