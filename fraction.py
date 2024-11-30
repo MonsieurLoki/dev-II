@@ -133,22 +133,6 @@ class Fraction:
         """
         return self._num / self._den
 
-    def __neg__(self) -> 'Fraction':
-        """Retourne la forme négative de la fraction.
-
-        PRE : /
-        POST : Retourne une nouvelle fraction avec un numérateur négatif.
-        """
-        return Fraction(-self._num, self._den)
-
-    def __abs__(self) -> 'Fraction':
-        """Retourne la valeur absolue de la fraction.
-
-        PRE : /
-        POST : Retourne une nouvelle fraction avec un numérateur positif.
-        """
-        return Fraction(abs(self._num), self._den)
-
     # ------------------ Properties checking  ------------------
 
     def is_zero(self) -> bool:
@@ -189,10 +173,5 @@ class Fraction:
         PRE : other est une instance de Fraction.
         POST : Retourne True si la différence absolue entre les deux fractions est une fraction unitaire.
         """
-        diff = abs(self - other)
-        return diff.numerator == 1 and diff.denominator > 0
-
-    def is_adjacent_to(self, other: 'Fraction') -> bool:
-        """Vérifie si deux fractions diffèrent d'une fraction unitaire."""
         diff = abs(self - other)
         return diff.numerator == 1 and diff.denominator > 0
