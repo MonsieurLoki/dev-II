@@ -1,7 +1,7 @@
 from fraction import Fraction
 
 def test_fraction():
-    # Création de fractions
+    # Création de quelques fractions
     f1 = Fraction(3, 4)
     f2 = Fraction(-5, 6)
     f3 = Fraction(2, 1)
