@@ -173,5 +173,5 @@ class Fraction:
         PRE : other est une instance de Fraction.
         POST : Retourne True si la différence absolue entre les deux fractions est une fraction unitaire.
         """
-        diff = abs(self - other)
+        diff = self - other
         return diff.numerator == 1 and diff.denominator > 0
