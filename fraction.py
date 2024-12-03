@@ -167,11 +167,18 @@ class Fraction:
         """
         return abs(self._num) == 1
 
-    def is_adjacent_to(self, other: 'Fraction') -> bool:
-        """Vérifie si deux fractions diffèrent d'une fraction unitaire.
+def is_adjacent_to(self, other):
+    """Vérifie si deux fractions diffèrent d'une fraction unitaire.
 
-        PRE : other est une instance de Fraction.
-        POST : Retourne True si la différence absolue entre les deux fractions est une fraction unitaire.
-        """
-        diff = self - other
-        return diff.numerator == 1 and diff.denominator > 0
+    Deux fractions sont adjacentes si la valeur absolue de leur différence
+    est une fraction unitaire (numérateur = 1 et dénominateur > 0).
+
+    POST : Renvoie True si les deux fractions sont adjacentes, False sinon.
+    """
+    # Calcule la différence absolue entre les fractions
+    diff_num = abs(self._num * other._den - other._num * self._den)
+    diff_den = self._den * other._den
+
+    # Vérifie si la différence est une fraction unitaire
+    return diff_num == 1 and diff_den > 0
+
