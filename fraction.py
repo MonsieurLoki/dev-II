@@ -166,8 +166,8 @@ class Fraction:
         POST : Retourne True si le numérateur est égal à 1, False sinon.
         """
         return abs(self._num) == 1
-
-def is_adjacent_to(self, other):
+        
+    def is_adjacent_to(self, other):
     """Vérifie si deux fractions diffèrent d'une fraction unitaire.
 
     Deux fractions sont adjacentes si la valeur absolue de leur différence
