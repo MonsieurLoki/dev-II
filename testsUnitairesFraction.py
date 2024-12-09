@@ -1,5 +1,6 @@
-import unittest
 from fraction import Fraction
+import unittest
+import coverage
 
 
 class TestFraction(unittest.TestCase):
@@ -45,4 +46,18 @@ class TestFraction(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    unittest.main()
+    # Initialisation de la couverture
+    cov = coverage.Coverage()
+    cov.start()
+
+    # Exécution des tests
+    unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+    # Arrêt de la couverture
+    cov.stop()
+
+    # Génération du rapport
+    print("\nRapport de couverture :\n")
+    cov.report()  # Affiche dans le terminal
+    cov.html_report(directory="htmlcov")  # Génère un rapport HTML dans le dossier "htmlcov"
+    print("\nRapport HTML généré dans le dossier 'htmlcov'.")
