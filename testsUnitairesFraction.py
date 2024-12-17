@@ -2,6 +2,10 @@ from fraction import Fraction
 import unittest
 import coverage
 
+# Initialisation de la couverture
+cov = coverage.Coverage()
+cov.start()  # Démarre la collecte de couverture
+
 
 class TestFraction(unittest.TestCase):
 
@@ -57,7 +61,7 @@ class TestFraction(unittest.TestCase):
         self.assertEqual(Fraction(2, 3) ** 2, Fraction(4, 9))
         self.assertEqual(Fraction(2, 3) ** -1, Fraction(3, 2))
         self.assertEqual(Fraction(2, 3) ** 0, Fraction(1, 1))
-        self.assertEqual(Fraction(-1, 2) ** 3, Fraction(-1, 8))  # Impair négatif
+        self.assertEqual(Fraction(-1, 2) ** 3, Fraction(-1, 8))
 
     def test_eq(self):
         """Test de l'égalité entre fractions."""
@@ -98,18 +102,10 @@ class TestFraction(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    # Initialisation de la couverture
-    cov = coverage.Coverage()
-    cov.start()
+    unittest.main(exit=False)  # Exécution des tests
 
-    # Exécution des tests
-    unittest.main(argv=['first-arg-is-ignored'], exit=False)
-
-    # Arrêt de la couverture
+    # Arrêt de la couverture et génération des rapports
     cov.stop()
-
-    # Génération du rapport
-    print("\nRapport de couverture :\n")
-    cov.report()  # Affiche dans le terminal
-    cov.html_report(directory="htmlcov")  # Génère un rapport HTML dans le dossier "htmlcov"
+    cov.report()  # Affiche le rapport dans le terminal
+    cov.html_report(directory="htmlcov")  # Génère un rapport HTML
     print("\nRapport HTML généré dans le dossier 'htmlcov'.")
